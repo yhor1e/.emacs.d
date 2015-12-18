@@ -70,6 +70,9 @@
 
 (global-whitespace-mode 0)
 
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
 ;; paran-mode
 (setq show-paren-delay 0)
 (show-paren-mode t)
