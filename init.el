@@ -14,6 +14,8 @@
   (defvar dependencies
     '(
        ;;     init-loader
+       exec-path-from-shell
+
        redo+
        undohist
        undo-tree
@@ -31,6 +33,7 @@
        js2-mode
        json-mode
        markdown-mode
+       flycheck
 
        editorconfig
 
@@ -45,7 +48,7 @@
     (unless (package-installed-p package)
       (package-install package))))
 
-
+(exec-path-from-shell-initialize)
 
 ;; set encode
 (set-language-environment "Japanese")
@@ -122,6 +125,15 @@
 (add-to-list 'auto-mode-alist '("\\.es$" . js2-mode))
 (add-hook 'js2-mode-hook 'js-indent-hook)
 (setq js2-strict-missing-semi-warning nil)
+
+;; flycheck
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(javascript-jshint)))
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+(flycheck-add-mode 'javascript-eslint 'js2-mode)
 
 ;; auto-complete
 (when (require 'auto-complete-config nil t)
