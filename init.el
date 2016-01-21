@@ -13,36 +13,36 @@
 
   (defvar dependencies
     '(
-       ;;     init-loader
-       exec-path-from-shell
+      ;;     init-loader
+      exec-path-from-shell
 
-       redo+
-       undohist
-       undo-tree
+      redo+
+      undohist
+      undo-tree
 
-       mozc
+      mozc
 
-       popwin
-       direx
+      popwin
+      direx
 
-       auto-complete
-       fuzzy
+      auto-complete
+      fuzzy
 
-       web-mode
-       emmet-mode
-       js2-mode
-       json-mode
-       markdown-mode
-       flycheck
+      web-mode
+      emmet-mode
+      js2-mode
+      json-mode
+      markdown-mode
+      flycheck
 
-       editorconfig
+      editorconfig
 
-       yasnippet
+      yasnippet
 
-       anzu
-       volatile-highlights
-       hlinum
-       ))
+      anzu
+      volatile-highlights
+      hlinum
+      ))
 
   (dolist (package dependencies)
     (unless (package-installed-p package)
@@ -58,12 +58,12 @@
 
 ;; set font
 (set-face-attribute 'default nil
-  :family "RictyDiminished"
-  :height 120)
+		    :family "RictyDiminished"
+		    :height 120)
 
 ;; set display
 (setq frame-title-format
-  (format "%%f"))
+      (format "%%f"))
 
 (global-linum-mode)
 
@@ -75,6 +75,13 @@
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+
+;; disabled auto-save
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
+;; auto revert buffer
+(global-auto-revert-mode 1)
 
 ;; paran-mode
 (setq show-paren-delay 0)
@@ -110,7 +117,7 @@
   (define-key web-mode-map (kbd "C-c C-v") 'browse-url-of-buffer))
 
 (setq browse-url-browser-function 'browse-url-generic
-  browse-url-generic-program "google-chrome")
+      browse-url-generic-program "google-chrome")
 
 ;; for css
 (autoload 'css-mode "css-mode" nil t)
@@ -127,13 +134,14 @@
 (setq js2-strict-missing-semi-warning nil)
 
 ;; flycheck
-(require 'flycheck)
+(global-flycheck-mode)
 (add-hook 'after-init-hook #'global-flycheck-mode)
-(setq-default flycheck-disabled-checkers
+(setq-default flycheck-disabled-
   (append flycheck-disabled-checkers
     '(javascript-jshint)))
-(flycheck-add-mode 'javascript-eslint 'web-mode)
+(flycheck-add-mode 'html-tidy  'web-mode)
 (flycheck-add-mode 'javascript-eslint 'js2-mode)
+
 
 ;; auto-complete
 (when (require 'auto-complete-config nil t)
@@ -166,9 +174,12 @@
   )
 
 ;; editorconfig
+					;(load "editorconfig")
+
 (when (locate-library "editorconfig")
   (editorconfig-mode 1)
   )
+
 
 ;; cua-mode
 (cua-mode t)
@@ -177,7 +188,7 @@
 ;; yasnippet
 (when (require 'yasnippet nil t)
   (setq yas-snippet-dirs
-    '("~/.emacs.d/snippets"))
+	'("~/.emacs.d/snippets"))
   (define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
   (define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
   (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
@@ -223,7 +234,7 @@
 
 (when (require 'direx nil t)
   (push '(direx:direx-mode :position left :width 50 :dedicated t)
-    popwin:special-display-config)
+	popwin:special-display-config)
   (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window))
 
 (when (require 'undo-tree nil t)
@@ -236,9 +247,9 @@
 (when (require 'anzu nil t)
   (global-anzu-mode +1)
   (custom-set-variables
-    '(anzu-mode-lighter "")
-    '(anzu-deactivate-region t)
-    '(anzu-search-threshold 1000)))
+   '(anzu-mode-lighter "")
+   '(anzu-deactivate-region t)
+   '(anzu-search-threshold 1000)))
 
 (when (require 'volatile-highlights nil t)
   (volatile-highlights-mode t))
