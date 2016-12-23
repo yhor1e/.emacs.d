@@ -186,7 +186,7 @@
 (use-package js2-mode
   :commands js2-mode
   :init
-  ;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+  ;;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-jsx-mode))
   ;;  (add-hook 'js2-mode-hook 'js-indent-hook)
   ;;  (setq js2-strict-missing-semi-warning nil)
