@@ -1,10 +1,6 @@
-(when (not (package-installed-p 'auto-complete))
-  (package-install 'auto-complete))
-
-
-(use-package auto-complete
+(use-package auto-complete-config
+  :ensure auto-complete
   :config
-  (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20150618.1949/dict")
   (ac-config-default)
   (setq ac-use-fuzzy t)
   (global-auto-complete-mode t)

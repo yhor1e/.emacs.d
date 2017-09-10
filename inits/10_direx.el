@@ -1,7 +1,5 @@
-(when (not (package-installed-p 'direx))
-  (package-install 'direx))
-
 (use-package direx
+  :ensure t
   :config
   (push '(direx:direx-mode :position left :width 50 :dedicated t)
     popwin:special-display-config)

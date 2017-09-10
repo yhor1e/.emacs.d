@@ -1,6 +1,4 @@
-(when (not (package-installed-p 'volatile-highlights))
-  (package-install 'volatile-highlights))
-
 (use-package volatile-highlights
+  :ensure t
   :config
   (volatile-highlights-mode t))

@@ -1,7 +1,5 @@
-(when (not (package-installed-p 'anzu))
-  (package-install 'anzu))
-
 (use-package anzu
+  :ensure t
   :config
   (global-anzu-mode +1)
   (custom-set-variables

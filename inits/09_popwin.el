@@ -1,6 +1,4 @@
-(when (not (package-installed-p 'popwin))
-  (package-install 'popwin))
-
 (use-package popwin
+  :ensure t
   :config
   (popwin-mode 1))
