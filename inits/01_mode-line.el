@@ -4,4 +4,5 @@
 (use-package smart-mode-line
   :ensure t
   :config
-  (sml/setup))
+  (smart-mode-line-enable t)
+  )
