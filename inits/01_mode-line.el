@@ -4,5 +4,10 @@
 (use-package smart-mode-line
   :ensure t
   :config
-  (smart-mode-line-enable t)
+  (setq sml/theme 'respectful)
+  (sml/setup)
+  (custom-set-faces
+  '(sml/filename ((t (:foreground "deep sky blue"))))
+  '(sml/global ((t (:foreground "dark gray"))))
+  '(sml/line-number ((t (:foreground "dark gray" :weight bold)))))
   )
