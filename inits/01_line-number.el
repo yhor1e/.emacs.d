@@ -2,4 +2,6 @@
 (use-package hlinum
   :ensure t
   :config
-  (hlinum-activate))
+  (hlinum-activate)
+  (set-face-attribute 'linum nil :height 100)
+  )
