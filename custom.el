@@ -9,9 +9,10 @@
   '(custom-safe-themes
      (quote
        ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+ '(js-indent-level 2)
   '(package-selected-packages
      (quote
-       (undohist yasnippet web-mode volatile-highlights use-package smex smart-mode-line rjsx-mode redo+ popwin mozc markdown-mode json-mode init-loader indent-guide hlinum git-gutter flycheck exec-path-from-shell emmet-mode editorconfig direx auto-install auto-complete anzu))))
+       (ac-racer company racer flycheck-rust flycheck-rust-setup rust-mode cargo undohist yasnippet web-mode volatile-highlights use-package smex smart-mode-line rjsx-mode redo+ popwin mozc markdown-mode json-mode init-loader indent-guide hlinum git-gutter flycheck exec-path-from-shell emmet-mode editorconfig direx auto-install auto-complete anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
