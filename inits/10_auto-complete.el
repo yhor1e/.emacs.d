@@ -26,4 +26,14 @@
     (add-to-list 'ac-sources 'ac-source-yasnippet)
     (add-to-list 'ac-sources 'ac-source-filename))
   (add-hook 'js2-mode-hook 'ac-js2-mode-setup)
+
+  (defun ac-rust-mode-setup ()
+    (use-package ac-racer
+      :ensure t
+      :config
+      (ac-racer-setup)
+      )
+    (add-to-list 'ac-sources 'ac-source-yasnippet)
+    (add-to-list 'ac-sources 'ac-source-filename))
+  (add-hook 'rust-mode-hook 'ac-rust-mode-setup)
   )

@@ -13,3 +13,9 @@
   (with-eval-after-load 'flycheck
     (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
   )
+
+(use-package flycheck-rust
+  :ensure t
+  :config
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+  )
