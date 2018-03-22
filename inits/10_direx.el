@@ -8,11 +8,11 @@
   (global-set-key (kbd "C-x C-j")
     (lambda () (interactive)
       (direx:jump-to-directory-other-window)
-      (use-package dired-k
-        :ensure t
-        :config
-        (direx-k)
-      )
+;;      (use-package dired-k
+;;        :ensure t
+;;        :config
+;;        (direx-k)
+;;      )
       )
     )
   )
