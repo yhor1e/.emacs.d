@@ -10,6 +10,9 @@
 ;  (flycheck-add-mode 'css-csslint 'css-mode)
   (flycheck-add-mode 'css-stylelint 'css-mode)
   (flycheck-add-mode 'javascript-eslint 'js2-mode)
+  (flycheck-add-mode 'javascript-eslint 'js-mode)
+  (flycheck-add-mode 'javascript-eslint 'vue-mode)
+  (flycheck-add-mode 'html-tidy 'vue-html-mode)
   (with-eval-after-load 'flycheck
     (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
   )
