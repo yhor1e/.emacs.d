@@ -35,3 +35,9 @@
   :config
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
   )
+
+(use-package flycheck-irony
+  :ensure t
+  :config
+  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup)
+  )
