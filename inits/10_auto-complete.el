@@ -2,6 +2,7 @@
   :ensure auto-complete
   :config
   (ac-config-default)
+  (delete 'c++-mode ac-modes)   ;disable in c++-mode
   (setq ac-use-fuzzy t)
   (global-auto-complete-mode t)
   (add-hook 'web-mode-hook 'auto-complete-mode)
