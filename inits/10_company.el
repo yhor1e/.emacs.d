@@ -15,8 +15,8 @@
     ("C-p" . company-select-previous)
     )
   :config
-  ;  (global-company-mode)
-  (add-hook 'c++-mode-hook '(lambda () (setq company-mode t))) ;enable in c++-mode
+;  (global-company-mode)
+  (add-hook 'c++-mode-hook 'company-mode) ;enable in c++-mode
 ;  (set-face-attribute 'company-tooltip nil
 ;    :foreground "black" :background "lightgrey")
 ;  (set-face-attribute 'company-tooltip-common nil
