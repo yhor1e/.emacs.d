@@ -2,6 +2,7 @@
   :init
   (setq company-selection-wrap-around t)
   (setq company-minimum-prefix-length 1)
+  (setq company-idle-delay 0)
   :bind
   (:map company-active-map
     ("M-n" . nil)
@@ -15,22 +16,26 @@
     ("C-p" . company-select-previous)
     )
   :config
-;  (global-company-mode)
-  (add-hook 'c++-mode-hook 'company-mode) ;enable in c++-mode
-;  (set-face-attribute 'company-tooltip nil
-;    :foreground "black" :background "lightgrey")
-;  (set-face-attribute 'company-tooltip-common nil
-;    :foreground "black" :background "lightgrey")
-;  (set-face-attribute 'company-tooltip-common-selection nil
-;    :foreground "white" :background "steelblue")
-;  (set-face-attribute 'company-tooltip-selection nil
-;    :foreground "black" :background "steelblue")
-;  (set-face-attribute 'company-preview-common nil
-;    :background nil :foreground "lightgrey" :underline t)
-;  (set-face-attribute 'company-scrollbar-fg nil
-;    :background "orange")
-;  (set-face-attribute 'company-scrollbar-bg nil
-;    :background "gray40")
+  (global-company-mode)
+  (add-to-list 'company-backends 'company-yasnippet)
+  (add-to-list 'company-backends 'company-css)
+  (add-to-list 'company-backends 'company-files)
+  (add-to-list 'company-backends 'company-clang)
+
+  (set-face-attribute 'company-tooltip nil
+    :foreground "black" :background "lightgrey")
+  (set-face-attribute 'company-tooltip-common nil
+    :foreground "black" :background "lightgrey")
+  (set-face-attribute 'company-tooltip-common-selection nil
+    :foreground "white" :background "steelblue")
+  (set-face-attribute 'company-tooltip-selection nil
+    :foreground "black" :background "steelblue")
+  (set-face-attribute 'company-preview-common nil
+    :background nil :foreground "lightgrey" :underline t)
+  (set-face-attribute 'company-scrollbar-fg nil
+    :background "orange")
+  (set-face-attribute 'company-scrollbar-bg nil
+    :background "gray40")
   )
 
 (use-package company-irony
@@ -38,9 +43,21 @@
   :config
   (add-to-list 'company-backends 'company-irony)
   )
+(use-package company-c-headers
+  :ensure t
+  :config
+  (add-to-list 'company-backends 'company-c-headers)
+  )
+
+(use-package ac-js2
+  :ensure t
+  :config
+  (add-to-list 'company-backends 'ac-js2-company)
+  (setq ac-js2-evaluate-calls t)
+  )
 
 (use-package company-quickhelp
   :ensure t
   :config
-  (add-hook 'rust-mode-hook 'cargo-minor-mode)
+  (company-quickhelp-mode +1)
   )
