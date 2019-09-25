@@ -16,12 +16,12 @@
     ("C-p" . company-select-previous)
     )
   :config
-  (global-company-mode)
-  (add-to-list 'company-backends 'company-yasnippet)
-  (add-to-list 'company-backends 'company-css)
+  (add-hook 'after-init-hook 'global-company-mode)
   (add-to-list 'company-backends 'company-files)
+  (define-key global-map (kbd "C-.") 'company-files)
+  (add-to-list 'company-backends 'company-css)
   (add-to-list 'company-backends 'company-clang)
-
+  (add-to-list 'company-backends 'company-yasnippet)
   (set-face-attribute 'company-tooltip nil
     :foreground "black" :background "lightgrey")
   (set-face-attribute 'company-tooltip-common nil
