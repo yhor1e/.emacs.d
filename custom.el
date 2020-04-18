@@ -11,7 +11,7 @@
     ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(package-selected-packages
    (quote
-    (erlang undohist yasnippet web-mode volatile-highlights use-package smex smart-mode-line rjsx-mode redo+ popwin mozc markdown-mode json-mode init-loader indent-guide hlinum git-gutter flycheck exec-path-from-shell emmet-mode editorconfig direx auto-install auto-complete anzu))))
+    (prettier-js smart-jump vue-mode tide typescript-mode racer cargo rust-mode undo-tree flycheck-irony flycheck-rust company-quickhelp ac-js2 company-c-headers company-irony quickrun add-node-modules-path eglot erlang undohist yasnippet web-mode volatile-highlights use-package smex smart-mode-line rjsx-mode redo+ popwin mozc markdown-mode json-mode init-loader indent-guide hlinum git-gutter flycheck exec-path-from-shell emmet-mode editorconfig direx auto-install auto-complete anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
