@@ -23,30 +23,34 @@
   (add-to-list 'company-backends 'company-clang)
   (add-to-list 'company-backends 'company-yasnippet)
   (set-face-attribute 'company-tooltip nil
-    :foreground "black" :background "lightgrey")
+    :foreground "white" :background "#383838")
   (set-face-attribute 'company-tooltip-common nil
-    :foreground "black" :background "lightgrey")
+    :foreground "white" :background "#383838")
   (set-face-attribute 'company-tooltip-common-selection nil
-    :foreground "white" :background "steelblue")
+    :foreground "white" :background "#226666")
   (set-face-attribute 'company-tooltip-selection nil
-    :foreground "black" :background "steelblue")
+    :foreground "white" :background "#226666")
   (set-face-attribute 'company-preview-common nil
-    :background nil :foreground "lightgrey" :underline t)
+    :background nil :foreground "white" :underline t)
+  (set-face-attribute 'company-tooltip-annotation nil
+    :foreground "white" :background nil)
+  (set-face-attribute 'company-tooltip-annotation-selection nil
+    :foreground "white" :background nil)
   (set-face-attribute 'company-scrollbar-fg nil
-    :background "orange")
+    :background "white")
   (set-face-attribute 'company-scrollbar-bg nil
-    :background "gray40")
+    :background "#383838")
   )
 
 (use-package company-irony
   :ensure t
   :config
-  (add-to-list 'company-backends 'company-irony)
+;  (add-to-list 'company-backends 'company-irony)
   )
 (use-package company-c-headers
   :ensure t
   :config
-  (add-to-list 'company-backends 'company-c-headers)
+;  (add-to-list 'company-backends 'company-c-headers)
   )
 
 (use-package ac-js2
@@ -56,8 +60,8 @@
   (setq ac-js2-evaluate-calls t)
   )
 
-(use-package company-quickhelp
-  :ensure t
-  :config
-  (company-quickhelp-mode +1)
-  )
+;(use-package company-quickhelp
+;  :ensure t
+;  :config
+;  (company-quickhelp-mode)
+;  )
