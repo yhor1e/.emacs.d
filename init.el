@@ -2,20 +2,16 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
-(defvar my-packages '(
-                       use-package
-                       ))
-(package-initialize)
-(when (not package-archive-contents)
-  (package-refresh-contents))
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+;; If you want to install use-package, set "nil" to "t".
+(if nil
+    (progn
+      (package-initialize)
+      (package-refresh-contents)
+      (package-install 'use-package))
+  )
 
 (require 'use-package)
-
 (use-package init-loader
   :ensure t
   :config
-  (init-loader-load)
-  )
+  (init-loader-load))
