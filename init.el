@@ -1,8 +1,9 @@
 (require 'package)
+
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
-;; If you want to install use-package, set "nil" to "t".
+;; If you want to install use-package, change "nil" to "t".
 (if nil
     (progn
       (package-initialize)
