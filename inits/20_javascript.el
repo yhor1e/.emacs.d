@@ -1,19 +1,20 @@
 (use-package js2-mode
   :ensure t
+  :functions flycheck-add-mode
+  :hook ((js2-mode . add-node-modules-path)
+         (js2-mode . prettier-js-mode))
   :config
-  (add-hook 'js2-mode-hook 'ac-js2-mode)
-  (setq-default indent-tabs-mode nil)
-  (setq js2-strict-missing-semi-warning nil)
-  :mode (("\\.js?$" . js2-mode))
+  (flycheck-add-mode 'javascript-eslint 'js2-mode)
+  :mode ("\\.js?$" . js2-mode)
   )
 
 (use-package rjsx-mode
   :ensure t
-  :mode ("[A-Z][a-zA-Z0-9.]*\\.js\\'" . rjsx-mode)
+  :mode ("[A-Z][a-zA-Z0-9]*\\.js?$" . rjsx-mode)
+  :hook (rjsx-mode . emmet-mode)
   )
 
 (use-package eglot
   :ensure t
-  :config
-  (add-hook 'js2-mode-hook 'eglot-ensure)
-  )
+  :hook
+  (js2-mode . eglot-ensure))

@@ -2,18 +2,20 @@
   :ensure t
   :config
   (setq-default rust-format-on-save t)
-  :mode (("\\.rs?$" . rust-mode))
-  )
+  :mode (("\\.rs?$" . rust-mode)))
 
 (use-package cargo
   :ensure t
   :config
-  (add-hook 'rust-mode-hook 'cargo-minor-mode)
-  )
+  :hook (rust-mode . cargo-minor-mode))
 
 (use-package racer
   :ensure t
   :config
-  (add-hook 'rust-mode-hook #'racer-mode)
-  (add-hook 'racer-mode-hook #'eldoc-mode)
-  )
+  :hook ((rust-mode . racer-mode)
+          (racer-mode . eldoc-mode)))
+
+(use-package flycheck-rust
+  :ensure t
+  :config
+  :hook (flycheck-mode . flycheck-rust-setup))
