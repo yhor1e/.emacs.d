@@ -1,18 +1,8 @@
 (use-package direx
   :ensure t
+  :after popwin
   :config
   (push '(direx:direx-mode :position left :width 50 :dedicated t)
-    popwin:special-display-config)
-;  (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
-
-  (global-set-key (kbd "C-x C-j")
-    (lambda () (interactive)
-      (direx:jump-to-directory-other-window)
-;;      (use-package dired-k
-;;        :ensure t
-;;        :config
-;;        (direx-k)
-;;      )
-      )
-    )
+	popwin:special-display-config)
+  (global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
   )
