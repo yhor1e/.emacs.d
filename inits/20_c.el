@@ -1,8 +1,14 @@
 (use-package irony
   :ensure t
-  :config
-  (add-hook 'c++-mode-hook 'irony-mode)
-  (add-hook 'c-mode-hook 'irony-mode)
-  (add-hook 'objc-mode-hook 'irony-mode)
-  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+  :hook
+  ((c++-mode . irony-mode)
+  (c-mode . irony-mode)
+  (objc-mode . irony-mode)
+  (irony-mode . irony-cdb-autosetup-compile-options))
   )
+
+(use-package flycheck-irony
+  :ensure t
+  :config
+  :hook
+  (flycheck-mode-hook . flycheck-irony-setup))
