@@ -6,12 +6,10 @@
  '(anzu-deactivate-region t)
  '(anzu-mode-lighter "")
  '(anzu-search-threshold 1000)
- '(custom-safe-themes
-   (quote
-    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
- '(package-selected-packages
-   (quote
-    (ido-completing-read+ which-key amx eldoc-box company-box prettier-js smart-jump vue-mode tide typescript-mode racer cargo rust-mode undo-tree flycheck-irony flycheck-rust company-quickhelp ac-js2 company-c-headers company-irony quickrun add-node-modules-path eglot erlang undohist yasnippet web-mode volatile-highlights use-package smex smart-mode-line rjsx-mode redo+ popwin mozc markdown-mode json-mode init-loader indent-guide hlinum git-gutter flycheck exec-path-from-shell emmet-mode editorconfig direx auto-install auto-complete anzu))))
+  '(custom-safe-themes
+     '("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default))
+  '(package-selected-packages
+     '(company-quickhelp racer cargo rust-mode erlang flycheck-irony vue-mode json-mode emmet-mode web-mode css-mode markdown-mode smart-jump volatile-highlights eglot rjsx-mode js2-mode add-node-modules-path prettier-js indent-guide editorconfig smex ido-grid-mode ido-vertical-mode ido-completing-read+ undohist undo-tree which-key use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
