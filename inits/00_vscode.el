@@ -2,7 +2,7 @@
 (defun open-by-vscode ()
   (interactive)
   (shell-command
-   (format "code -r -g %s:%d:%d"
+   (format "code-insiders -r -g %s:%d:%d"
            (buffer-file-name)
            (line-number-at-pos)
            (current-column))))
