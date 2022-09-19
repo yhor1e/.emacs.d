@@ -22,6 +22,7 @@
   (add-to-list 'company-backends 'company-files)
   (define-key global-map (kbd "C-.") 'company-files)
   (add-to-list 'company-backends 'company-yasnippet)
+  (add-to-list 'company-backends 'company-capf)
   (set-face-attribute 'company-tooltip nil
     :foreground "white" :background "#383838")
   (set-face-attribute 'company-tooltip-common nil

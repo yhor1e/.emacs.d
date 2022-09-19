@@ -14,7 +14,8 @@
   :hook (rjsx-mode . emmet-mode)
   )
 
-(use-package eglot
+(use-package lsp-mode
   :ensure t
-  :hook
-  (js2-mode . eglot-ensure))
+  :commands (lsp lsp-deferred)
+  :hook (js2-mode . lsp-deferred)
+)

@@ -5,3 +5,5 @@ url
 ido.last
 smex-items
 undohist
+.cache
+.lsp-session-v1
